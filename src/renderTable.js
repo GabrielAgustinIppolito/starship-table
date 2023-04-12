@@ -1,23 +1,15 @@
-import InsertShip from "./InsertShip";
+import InsertElement from "./InsertElement";
 import InsertThead from "./insertTHead";
 
-export default function RenderTable({ ships }) {
-   const renderShips = ships.map((ship, index) => {
-      // return (<tr>
-      //   <td>{ship.name}</td>
-      //   <td>{ship.model}</td>
-      //   <td>{ship.manufacturer}</td>
-      //   <td>{ship.length}</td>
-      //   </tr>);
-      // console.log(ship);
-      // console.log(Object.keys(ship));
-      return (<InsertShip key={index} ship={ship} />);
+export default function RenderTable({ elements }) {
+   const renderElements = elements.map((element, index) => {
+      return (<InsertElement key={index} element={element} />);
       
    });
    
    
-   const renderThead = ships.splice(0,1).map((ship, index) => {
-      return (<InsertThead key={index} ship={ship} />);
+   const renderThead = elements.splice(0,1).map((element, index) => {
+      return (<InsertThead key={index} element={element} />);
    });
    return (
       <table>
@@ -25,7 +17,7 @@ export default function RenderTable({ ships }) {
             {renderThead}
          </thead>
          <tbody>
-            {renderShips}
+            {renderElements}
          </tbody>
       </table>
    );

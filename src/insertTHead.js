@@ -1,7 +1,5 @@
-export default function InsertThead({ship}) {
-   console.log(ship);
-   let keys = Object.keys(ship);
-   console.log(keys);
+export default function InsertThead({element}) {
+   let keys = Object.keys(element);
    return (
       <tr>
          <th>{keys[0]}</th>
